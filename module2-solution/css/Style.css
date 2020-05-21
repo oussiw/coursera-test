@@ -1,1 +1,104 @@
 
+body{
+    margin: 10px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+header{
+    text-align: center;
+}
+
+.id-1{
+    background-color: chocolate;
+}
+.id-2{
+    background-color: cornflowerblue;
+}
+.id-3{
+    background-color: darkcyan;
+}
+
+
+@media (min-width : 992px){
+    .cl-lg-4{
+        float: left;
+        width: 33.33%;
+            
+    }
+    .content{
+        margin: 10px;
+        border: 1px solid black;
+        position: relative;  
+        padding: 25px 10px 0px 10px;  
+        background-color: burlywood;
+    }
+    
+    .title{
+        position: absolute;
+        top: -17px;
+        right: -1px;
+        border: 1px solid black;
+        width: 100px;
+        height: 30px;
+        padding-top: 5px;
+        text-align: center;
+    }
+}
+
+@media (min-width:768px) and (max-width:991px){
+    .cl-md-6{
+        float: left;
+        width: 50%;
+    }
+    .cl-md-12{
+        float: left;
+        width: 100%;
+    }
+    .content{
+        background-color: burlywood;
+        position: relative;
+        margin: 10px;
+        border: 1px solid black;
+        position: relative;  
+        padding: 25px 10px 0px 10px;  
+    }
+    
+    .title{
+        position: absolute;
+        top: -17px;
+        right: -1px;
+        border: 1px solid black;
+        width: 100px;
+        height: 30px;
+        padding-top: 5px;
+        text-align: center;
+    }
+}
+
+@media (max-width:767px){
+    .cl-sm-12{
+        float: left;
+        width: 100%;
+    }
+    .content{
+        background-color: burlywood;
+        position: relative;
+        margin: 20px 30px;
+        border: 1px solid black;
+        position: relative;  
+        padding: 25px 10px 0px 10px;  
+    }
+    .title{
+        position: absolute;
+        top: -17px;
+        right: -1px;
+        border: 1px solid black;
+        width: 100px;
+        height: 30px;
+        padding-top: 5px;
+        text-align: center;
+    }
+}
