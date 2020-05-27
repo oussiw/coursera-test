@@ -1,0 +1,21 @@
+*{
+	box-sizing: border-box;
+}
+h3{
+	background-color: #e9ecef00;
+	margin-top: 20px; 
+}
+.jumbotron{
+	background-color: #e9ecef00;
+	padding-top: 30px;
+}
+
+.container-fluid{
+	color: white;
+	background-color: gray;
+}
+
+
+h4{
+	font-size: 20px;
+}
