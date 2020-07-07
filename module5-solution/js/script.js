@@ -103,7 +103,7 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
           // variable's name implies it expects.
           // var chosenCategoryShortName = ....
           var chosenCategoryShortName = chooseRandomCategory(categories);
-          console.log(chosenCategoryShortName)
+          console.log(chosenCategoryShortName.short_name)
           
           // TODO: STEP 3: Substitute {{randomCategoryShortName}} in the home html snippet with the
           // chosen category from STEP 2. Use existing insertProperty function for that purpose.
