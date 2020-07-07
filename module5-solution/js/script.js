@@ -104,7 +104,6 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
           // var chosenCategoryShortName = ....
           var chosenCategoryShortName = chooseRandomCategory(categories).short_name;
           console.log(chosenCategoryShortName.short_name);
-          console.log("hello");
           console.log(homeHtml);
           
           // TODO: STEP 3: Substitute {{randomCategoryShortName}} in the home html snippet with the
