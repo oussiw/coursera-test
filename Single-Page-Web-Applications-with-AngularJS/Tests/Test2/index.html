@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myFirstApp">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <title>My first angular app</title>
+</head>
+<body>
+<h3>Dependency injection App: </h3><hr>
+<div ng-controller="myFirstController">
+    Type your name:
+    <input type="text"
+           ng-model="name"
+           ng-blur="upper();">
+</div>
+</body>
+</html>
