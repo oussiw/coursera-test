@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MsgApp">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <title>My first angular app</title>
+</head>
+<body>
+<h3>Test App: </h3><hr>
+<div ng-controller="MsgAppController">
+    <label>Hello from {{name}}</label><br><br>
+    <button ng-click="changeState()">Feed me...</button><br><br>
+    <img ng-src="Images/yaakov_{{state}}.png">
+</div>
+</body>
+</html>
