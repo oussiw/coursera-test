@@ -9,9 +9,14 @@
 <body>
 <h3>Test App: </h3><hr>
 <div ng-controller="MsgAppController">
-    <label>Hello from {{name}}</label><br><br>
-    <button ng-click="changeState()">Feed me...</button><br><br>
+    <label>Hello from {{name}}</label><br>
+    <blockquote>{{sayHello()}}</blockquote>
+    <button ng-click="changeState()">{{button}}</button><br>
+    <p>This will cost you {{ cost | currency : "##" :4}}</p>
     <img ng-src="Images/yaakov_{{state}}.png">
+</div>
+<div ng-controller="MysecondController">
+    <h1>{{message}}</h1>
 </div>
 </body>
 </html>

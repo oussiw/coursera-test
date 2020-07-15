@@ -31,14 +31,39 @@
 (function () {
     'use strict';
     angular.module('MsgApp',[])
-        .controller('MsgAppController',DIfunction);
-    DIfunction.$inject = ["$scope"];
-    function DIfunction($scope) {
-        $scope.name = 'Oussama';
-        $scope.state = "Hungry";
+        .controller('MsgAppController',DIfunction)
+        .controller('MysecondController',SEfunction)
+        .filter('hiMessage',filterFactory);
 
+    DIfunction.$inject = ["$scope","$filter"];
+    function DIfunction($scope,$filter) {
+        $scope.name = 'Yaakov';
+        $scope.state = "Hungry";
+        $scope.button = "Feed me ...";
+        $scope.cost = .45;
+        // $scope.sayHello = function(){
+        //     var msg = "Nice to meet you friend!";
+        //     return $filter("uppercase")(msg);
+        // };
+        $scope.sayHello = function(){
+            var action = $filter("uppercase");
+            var msg = "Nice to meet you friend!";
+            return action(msg);
+        };
         $scope.changeState = function () {
             $scope.state = "fed";
+            $scope.button = "Fed";
+        }
+    };
+// Here I tested the possibility of adding multiple controllers and creating custom filters
+    SEfunction.$inject = ["$scope","hiMessageFilter"];
+    function SEfunction($scope,hiMessageFilter) {
+        $scope.message = hiMessageFilter("Hello motherfucker");
+    };
+
+    function filterFactory() {
+        return function (input) {
+            return input.replace("Hello","Hi");
         }
     }
 })();
