@@ -38,7 +38,7 @@
     DIfunction.$inject = ["$scope","$filter"];
     function DIfunction($scope,$filter) {
         $scope.name = 'Yaakov';
-        $scope.state = "Hungry";
+        $scope.state = "hungry";
         $scope.button = "Feed me ...";
         $scope.cost = .45;
         // $scope.sayHello = function(){
