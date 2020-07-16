@@ -1,85 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myFirstApp">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <script src="js/angular.min.js"></script>
     <script src="js/app.js"></script>
     <title>My first angular app</title>
-    <style>
-        table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        td, th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
-    </style>
+    <link type="text/css" rel="stylesheet" href="css/tableStyle.css">
 </head>
-<body>
+<body ng-app="myFirstApp">
 <h3>Loop App: </h3><hr>
 <div ng-controller="myFirstController">
-    <h3>Display normal list</h3>
-    <ul>
-        <li ng-repeat="item in items">{{item}}</li>
-    </ul>
-    <hr>
-    <h3>None filtered table</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>Index</th>
-                <th>First name</th>
-                <th>Last name</th>
-                <th>Age</th>
-                <th>Location</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="user in users">
-                <td>{{$index + 1}}</td>
-                <td>{{user.firstName}}</td>
-                <td>{{user.lastName}}</td>
-                <td>{{user.age}}</td>
-                <td>{{user["city of location"]}}</td>
-            </tr>
-        </tbody>
 
-    </table>
-    <hr>
-    <h3>Filtered table</h3>
-    <input type="text" ng-model="search" placeholder="Search"><br>
-    <ul>
-        <li ng-repeat="item in filteredItems| filter : search">{{item}}</li>
-    </ul>
-
-    <table>
-        <thead>
-        <tr>
-            <th>Index</th>
-            <th>First name</th>
-            <th>Last name</th>
-            <th>Age</th>
-            <th>Location</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="user in filteredUsers">
-            <td>{{$index + 1}}</td>
-            <td>{{user.firstName}}</td>
-            <td>{{user.lastName}}</td>
-            <td>{{user.age}}</td>
-            <td>{{user["city of location"]}}</td>
-        </tr>
-        </tbody>
-    </table>
 </div>
 </body>
 </html>
