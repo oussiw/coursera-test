@@ -16,7 +16,7 @@
     <img ng-src="Images/yaakov_{{state}}.png">
 </div>
 <div ng-controller="MysecondController">
-    <h1>{{message}}</h1>
+    <h1>{{message|concat:" yeah / "|concat:"got it."}}</h1>
 </div>
 </body>
 </html>

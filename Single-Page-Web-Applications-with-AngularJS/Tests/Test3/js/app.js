@@ -33,7 +33,8 @@
     angular.module('MsgApp',[])
         .controller('MsgAppController',DIfunction)
         .controller('MysecondController',SEfunction)
-        .filter('hiMessage',filterFactory);
+        .filter('hiMessage',hiFilterFactory)
+        .filter("concat",concatFilterFactory);
 
     DIfunction.$inject = ["$scope","$filter"];
     function DIfunction($scope,$filter) {
@@ -58,12 +59,22 @@
 // Here I tested the possibility of adding multiple controllers and creating custom filters
     SEfunction.$inject = ["$scope","hiMessageFilter"];
     function SEfunction($scope,hiMessageFilter) {
-        $scope.message = hiMessageFilter("Hello motherfucker");
+        $scope.message = hiMessageFilter("Hello motherfucker from earth;");
     };
 
-    function filterFactory() {
+    function hiFilterFactory() {
         return function (input) {
+            console.log("first filter")
             return input.replace("Hello","Hi");
         }
-    }
+    };
+
+    function concatFilterFactory() {
+        return function (input,arg1) {
+            console.log("Second filter")
+            return input.concat(arg1);
+        }
+    };
+
+
 })();
