@@ -41,7 +41,9 @@
         </tr>
         </tbody>
     </table>
-    <blockquote>Error: {{adder.errorMessage}}</blockquote>
+<!--    <div ng-if="adder.errorMessage">Error: {{adder.errorMessage}}</div>-->
+    <div ng-show="adder.errorMessage">Error: {{adder.errorMessage}}</div>
+<!--    <div ng-hide="!adder.errorMessage">Error: {{adder.errorMessage}}</div>-->
 </div>
 
 <!--<br><br>-->
