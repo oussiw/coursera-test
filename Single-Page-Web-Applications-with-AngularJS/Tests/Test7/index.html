@@ -13,15 +13,14 @@
     <link type="text/css" rel="stylesheet" href="css/tableStyle.css">
 </head>
 <body ng-app="myFirstApp">
-<h3>Custom Service App: </h3>
+<h3>Factory Service App: </h3>
 <hr><br>
+<h3>List #1</h3>
 <div ng-controller="AddController as adder">
     <input type="text" ng-model="adder.itemName" placeholder="Item name">
     <input type="number" ng-model="adder.itemQuantity" placeholder="Item quantity">
     <button ng-click="adder.addItem()">Add</button>
-</div>
-<br>
-<div ng-controller="ShowController as shower">
+    <br><br>
     <table>
         <thead>
         <tr>
@@ -32,7 +31,35 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="item in shower.cart">
+        <tr ng-repeat="item in adder.items">
+            <td>{{$index + 1}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.quantity}}</td>
+            <td>
+                <a ng-click="adder.removeItem($index)" href="#">Remove</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<br><br>
+<h3>List #2</h3>
+<div ng-controller="ShowController as shower">
+    <input type="text" ng-model="shower.itemName" placeholder="Item name">
+    <input type="number" ng-model="shower.itemQuantity" placeholder="Item quantity">
+    <button ng-click="shower.addItem()">Add</button>
+    <br><br>
+    <table>
+        <thead>
+        <tr>
+            <th>Index</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in shower.items">
             <td>{{$index + 1}}</td>
             <td>{{item.name}}</td>
             <td>{{item.quantity}}</td>
@@ -42,6 +69,8 @@
         </tr>
         </tbody>
     </table>
+    <blockquote>Error: {{shower.errorMessage}}</blockquote>
+
 </div>
 </body>
 </html>
