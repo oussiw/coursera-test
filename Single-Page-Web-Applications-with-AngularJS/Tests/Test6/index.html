@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <title>My first angular app</title>
+    <style>
+        body{
+            margin: 40px;
+        }
+    </style>
+    <link type="text/css" rel="stylesheet" href="css/tableStyle.css">
+</head>
+<body ng-app="myFirstApp">
+<h3>Custom Service App: </h3>
+<hr>
+<div ng-controller="AddController">
+    <input type="text" ng-model="name" placeholder="Item name">
+    <input type="number" ng-model="quantity" placeholder="Item quantity">
+    <button ng-click="addItem()">Add</button>
+</div>
+<hr>
+<div ng-controller="ShowController">
+    <table>
+        <thead>
+        <tr>
+            <th>Index</th>
+            <th>First name</th>
+            <th>Last name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in cart">
+            <td>{{$index + 1}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.quantity}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
