@@ -1,28 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Http request test app</title>
-</head>
-<body ng-app="HttpRequestApp">
-<h2>Http request test app</h2>
-<hr>
-<br>
-<div ng-controller="HttpController as ctrl">
-    <ul>
-        <li ng-repeat="category in ctrl.categories">
-            ( <a href="" ng-click="ctrl.getMenuByCategory(category.short_name);">{{category.short_name}}</a> , {{category.name}} )
-        </li>
-    </ul>
+<html ng-app='ShoppingListDirectiveApp'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Directives with Isolate Scope and '&'</title>
+  </head>
+  <body>
+    <h1>Directives with Isolate Scope and '&'</h1>
 
-    <ul ng-if="ctrl.menuitems">
-        <li ng-repeat="item in ctrl.menuitems.menu_items">
-            ( {{item.short_name}} , {{item.name}} )
-        </li>
-    </ul>
-</div>
+    <!-- LIST #1 - unlimited items -->
+    <div id="list" ng-controller='ShoppingListController as list'>
+      <input type="text" ng-model="list.itemName" placeholder="item name">
+      <input type="text" ng-model="list.itemQuantity" placeholder="quantity">
+      <button ng-click="list.addItem();">Add Item</button>
+      <span>{{ list.lastRemoved }}</span>
 
-<script src="js/angular.min.js"></script>
-<script src="js/app.js"></script>
-</body>
+      <shopping-list
+        items="list.items"
+        title="{{list.title}}"
+        bad-remove="list.removeItem"
+        on-remove="list.removeItem(index)"></shopping-list>
+
+    </div>
+
+  </body>
 </html>
