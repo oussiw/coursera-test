@@ -21,6 +21,10 @@
         tr:nth-child(even) {
             background-color: #dddddd;
         }
+        .error{
+            color: red;
+            font-size: large;
+        }
     </style>
 </head>
 <body ng-app="module3">
@@ -41,7 +45,7 @@
     <ol ng-if="ctrl.found.length > 0">
         <found-items ng-repeat="item in ctrl.found"></found-items>
     </ol>
-    <div ng-if="ctrl.error_message">Error: {{ctrl.error_message}}</div>
+    <div ng-if="ctrl.error_message" class="error">Error: {{ctrl.error_message}}</div>
 </div>
 <script src="angular.min.js"></script>
 <script src="app.js"></script>

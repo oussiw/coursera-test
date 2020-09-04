@@ -11,17 +11,28 @@
 
     function NarrowItDownController(MenuSearchService) {
         var ctrl = this;
-
+        ctrl.error_message = "";
+        ctrl.searchInput = "";
         ctrl.search = function () {
-            var promise = MenuSearchService.getMatchedMenuItems(ctrl.searchInput);
-            promise
-                .then(function (response) {
-                    ctrl.found = response;
-                    console.log(ctrl.found.length);
-                })
-                .catch(function (error) {
-                    console.log(error.message);
-                });
+            ctrl.error_message = "";
+            if(ctrl.searchInput.length > 0){
+                var promise = MenuSearchService.getMatchedMenuItems(ctrl.searchInput);
+                promise
+                    .then(function (response) {
+                        ctrl.found = response;
+                        console.log(ctrl.found.length);
+                        if(ctrl.found.length<=0){
+                            ctrl.error_message = "Not found";
+                        }
+                    })
+                    .catch(function (error) {
+                        console.log(error.message);
+                    });
+            }
+            else{
+                ctrl.found = [];
+                ctrl.error_message = "Incorrect input";
+            }
         }
 
         ctrl.removeItem = function (index) {
