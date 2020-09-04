@@ -1,6 +1,14 @@
-<li>
-    {{item.short_name}}
-    {{item.name}}
-    {{item.description}}
-    <button class="btn-danger btn-sm" ng-click="ctrl.removeItem($index)">Don't want this one</button>
-</li>
+<!--<li>-->
+<!--    {{item.short_name}}-->
+<!--    {{item.name}}-->
+<!--    {{item.description}}-->
+<!--    <button class="btn-danger btn-sm" ng-click="ctrl.removeItem($index)">Don't want this one</button>-->
+<!--</li>-->
+
+
+<tr>
+   <td>{{item.short_name}}</td>
+   <td>{{item.name}}</td>
+   <td>{{item.description}}</td>
+   <td><button class="btn-danger btn-sm" ng-click="ctrl.removeItem($index)">Don't want this one</button></td>
+</tr>

@@ -25,7 +25,8 @@
 </head>
 <body ng-app="module3">
 <div class="container" ng-controller="NarrowItDownController as ctrl">
-    <h1>Narrow Down Your Chinese Menu Choice</h1><hr>
+    <h1>Narrow Down Your Chinese Menu Choice</h1>
+    <hr>
 
     <div class="form-group">
         <input type="text" placeholder="search term" class="form-control" ng-model="ctrl.searchInput">
@@ -35,38 +36,30 @@
             Narrow It Down For Me!
         </button>
     </div>
-    <br><br><hr>
-    <ol ng-if="ctrl.found.length > 0">
+    <br><br>
+    <hr>
+    <table ng-if="ctrl.found.length > 0">
+        <thead>
+        <tr>
+            <th>Short Name</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
         <found-items ng-repeat="item in ctrl.found"></found-items>
-    </ol>
-<!--    <table ng-if="ctrl.found.length > 0">-->
-<!--        <thead>-->
-<!--            <tr>-->
-<!--                <th>Short Name</th>-->
-<!--                <th>Name</th>-->
-<!--                <th>Description</th>-->
-<!--                <th>Action</th>-->
-<!--            </tr>-->
-<!--        </thead>-->
-<!--       <tbody>-->
-<!--            <tr ng-repeat="item in ctrl.found">-->
-<!--                <td>{{item.short_name}}</td>-->
-<!--                <td>{{item.name}}</td>-->
-<!--                <td>{{item.description}}</td>-->
-<!--                <td><button class="btn-danger btn-sm" ng-click="ctrl.removeItem($index)">Don't want this one</button></td>-->
-<!--            </tr>-->
-<!--       </tbody>-->
-<!--    </table>-->
+        </tbody>
+    </table>
     <div ng-if="ctrl.error_message">Error: {{ctrl.error_message}}</div>
 </div>
 <script src="angular.min.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
+<!--    <ol ng-if="ctrl.found.length > 0">-->
+<!--        <found-items found-items= ng-repeat="item in ctrl.found"></found-items>-->
+<!--    </ol>-->
 
-<!--           <tr ng-repeat="item in ctrl.selected_items ">-->
-<!--               <td>{{item.short_name}}</td>-->
-<!--               <td>{{item.name}}</td>-->
-<!--               <td>{{item.description}}</td>-->
-<!--               <td><button class="btn-danger btn-sm" ng-click="ctrl.removeItem($index)">Don't want this one</button></td>-->
-<!--           </tr>-->
+
+

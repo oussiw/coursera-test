@@ -33,7 +33,7 @@
 
     function FoundItems() {
         var ddo = {
-            templateUrl: 'Single-Page-Web-Applications-with-AngularJS/module3-solution/loader/itemsloaderindicator.template.html'
+            templateUrl: 'itemsloaderindicator.template.html'
         };
 
         return ddo;
