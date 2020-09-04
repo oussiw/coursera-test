@@ -38,28 +38,16 @@
     </div>
     <br><br>
     <hr>
-    <table ng-if="ctrl.found.length > 0">
-        <thead>
-        <tr>
-            <th>Short Name</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Action</th>
-        </tr>
-        </thead>
-        <tbody>
-            <found-items ng-repeat="item in ctrl.found"></found-items>
-        </tbody>
-    </table>
+    <ol ng-if="ctrl.found.length > 0">
+        <found-items found-items= ng-repeat="item in ctrl.found"></found-items>
+    </ol>
     <div ng-if="ctrl.error_message">Error: {{ctrl.error_message}}</div>
 </div>
 <script src="angular.min.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
-<!--    <ol ng-if="ctrl.found.length > 0">-->
-<!--        <found-items found-items= ng-repeat="item in ctrl.found"></found-items>-->
-<!--    </ol>-->
+
 
 
 
