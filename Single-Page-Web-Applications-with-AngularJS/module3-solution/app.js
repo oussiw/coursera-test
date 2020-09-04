@@ -13,8 +13,6 @@
         var ctrl = this;
 
         ctrl.search = function () {
-            // ctrl.found = MenuSearchService.getMatchedMenuItems(ctrl.searchInput);
-            // console.log(ctrl.found);
             var promise = MenuSearchService.getMatchedMenuItems(ctrl.searchInput);
             promise
                 .then(function (response) {
